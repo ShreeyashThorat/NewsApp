@@ -7,6 +7,7 @@ import 'package:news_app/views/search/search_news.dart';
 import 'package:news_app/views/single_news.dart';
 
 import '../../data/model/news_model.dart';
+import '../../services/formatter.dart';
 import 'bloc/get_news_bloc.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -241,7 +242,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           ),
                                           const Spacer(),
                                           Text(
-                                            "${state.news[index].published}",
+                                            Formatter.formatDate(
+                                                "${state.news[index].published}"),
                                             style: TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w400,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import '../../data/model/news_model.dart';
+import '../../services/formatter.dart';
 import '../single_news.dart';
 
 class BookMarkedScreen extends StatefulWidget {
@@ -95,7 +96,8 @@ class _BookMarkedScreenState extends State<BookMarkedScreen> {
                                                 ),
                                                 const Spacer(),
                                                 Text(
-                                                  "${newsItem.published}",
+                                                  Formatter.formatDate(
+                                                      "${newsItem.published}"),
                                                   style: TextStyle(
                                                       fontSize: 18,
                                                       fontWeight:
